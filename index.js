@@ -48,23 +48,12 @@ client.on("message", function (message) {
                     .setColor("RANDOM")
                     .addField(" Status", ":white_check_mark: Online")
                     .addField("Connection", ":clock: " + client.ping + " ms")
-                    .addBlankField();
-                let e = servers[epitech];
-                let i = 0;
-                embed.addField("Musique chargée:", "****");
-                while (e.queue[i] != null && e.queue.length !== 0) {
-                    i++;
-                    search(e.queue[i], opts, function(err, results) {
-                        if(err) return console.log(err);
-                        for (var y = 0; results[y].kind == 'youtube#channel'; y++);
-                        let url = results[y].link;
-                        let title = results[y].title;
-                        embed.addField(title, url);
-                    });
-                }
-                embed
+                    .addBlankField()
                     .setThumbnail("https://cdn.discordapp.com/attachments/759765674204594216/783184544953139219/pp.png")
                     .setTimestamp();
+                let server = servers[epitech];
+                let i = 0;
+                while (server.queue[i] != null)
                 message.channel.send(embed);
                 break;
             case "!!joinme":

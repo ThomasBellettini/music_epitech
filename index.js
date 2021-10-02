@@ -35,7 +35,7 @@ function play(connection, guild_id) {
 }
 
 client.on("message", function (message) {
-    if (message.channel.type == "dm") {
+    if (message.channel.type == "dm" || 1 == 1) {
         let args = message.content.split(' ');
         const epitech = client.guilds.get("793156829672243232");
         const mid = message.author.id;
@@ -48,8 +48,22 @@ client.on("message", function (message) {
                     .setColor("RANDOM")
                     .addField(" Status", ":white_check_mark: Online")
                     .addField("Connection", ":clock: " + client.ping + " ms")
-                    .addBlankField()
-                    .setThumbnail("https://cdn.shurisko.fr/shurisko.gif")
+                    .addBlankField();
+                let e = servers[epitech];
+                let i = 0;
+                embed.addField("Musique chargée:", "****");
+                while (e.queue[i] != null) {
+                    i++;
+                    search(e.queue[i], opts, function(err, results) {
+                        if(err) return console.log(err);
+                        for (var y = 0; results[y].kind == 'youtube#channel'; y++);
+                        let url = results[y].link;
+                        let title = results[y].title;
+                        embed.addField(title, url);
+                    });
+                }
+                embed
+                    .setThumbnail("https://cdn.discordapp.com/attachments/759765674204594216/783184544953139219/pp.png")
                     .setTimestamp();
                 message.channel.send(embed);
                 break;

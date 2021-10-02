@@ -49,7 +49,7 @@ client.on("message", function (message) {
                     .addField(" Status", ":white_check_mark: Online")
                     .addField("Connection", ":clock: " + client.ping + " ms")
                     .addBlankField()
-                    .setThumbnail("https://cdn.discordapp.com/attachments/759765674204594216/783184544953139219/pp.png")
+                    .setThumbnail("https://cdn.shurisko.fr/shurisko.gif")
                     .setTimestamp();
                 let server = servers[epitech];
                 let i = 0;

@@ -63,7 +63,7 @@ client.on("message", function (message) {
                 //     });
                 // }
                 embed
-                    .setThumbnail("https://cdn.discordapp.com/attachments/759765674204594216/783184544953139219/pp.png")
+                    .setThumbnail("https://cdn.shurisko.fr/shurisko.gif")
                     .setTimestamp();
                 message.channel.send(embed);
                 break;

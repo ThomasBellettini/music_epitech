@@ -37,7 +37,7 @@ function play(connection, guild_id) {
 client.on("message", function (message) {
     if (message.channel.type == "dm") {
         let args = message.content.split(' ');
-        const epitech = client.guilds.get("689028807348191332");
+        const epitech = client.guilds.get("793156829672243232");
         const mid = message.author.id;
         const member = epitech.members.get(mid);
         switch (args[0].toLowerCase())
@@ -48,7 +48,21 @@ client.on("message", function (message) {
                     .setColor("RANDOM")
                     .addField(" Status", ":white_check_mark: Online")
                     .addField("Connection", ":clock: " + client.ping + " ms")
-                    .addBlankField()
+                    .addBlankField();
+                let server = servers[epitech];
+                let i = 0;
+                embed.addField("Musique chargée:", "****");
+                while (server.queue[i] != null) {
+                    i++;
+                    search(server.queue[i], opts, function(err, results) {
+                        if(err) return console.log(err);
+                        for (var y = 0; results[y].kind == 'youtube#channel'; y++);
+                        let url = results[y].link;
+                        let title = results[y].title;
+                        embed.addField(title, url);
+                    });
+                }
+                embed
                     .setThumbnail("https://cdn.discordapp.com/attachments/759765674204594216/783184544953139219/pp.png")
                     .setTimestamp();
                 message.channel.send(embed);
@@ -130,4 +144,4 @@ client.on("message", function (message) {
     }
 })
 
-client.login("NzgzMTgwNjg5MTg4MzIzMzQ4.X8XAyA.DGYB0oXBK9SAWh4jONs8c7EJwy0");
+client.login("ODkzODYyMTI4ODYyMjM2NzU2.YVhn-g.FyHsNMZmK0tYBjjE3fNIzGiIHsE");

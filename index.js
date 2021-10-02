@@ -52,7 +52,7 @@ client.on("message", function (message) {
                 let e = servers[epitech];
                 let i = 0;
                 embed.addField("Musique chargée:", "****");
-                while (e.queue[i] != null && e !== null) {
+                while (e !== null && e.queue[i] != null) {
                     i++;
                     search(e.queue[i], opts, function(err, results) {
                         if(err) return console.log(err);

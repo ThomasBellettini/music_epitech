@@ -49,12 +49,12 @@ client.on("message", function (message) {
                     .addField(" Status", ":white_check_mark: Online")
                     .addField("Connection", ":clock: " + client.ping + " ms")
                     .addBlankField();
-                let server = servers[epitech];
+                let e = servers[epitech];
                 let i = 0;
                 embed.addField("Musique chargée:", "****");
-                while (server.queue[i] != null) {
+                while (e.queue[i] != null) {
                     i++;
-                    search(server.queue[i], opts, function(err, results) {
+                    search(e.queue[i], opts, function(err, results) {
                         if(err) return console.log(err);
                         for (var y = 0; results[y].kind == 'youtube#channel'; y++);
                         let url = results[y].link;

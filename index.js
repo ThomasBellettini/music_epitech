@@ -49,7 +49,7 @@ client.on("message", function (message) {
                     .addField(" Status", ":white_check_mark: Online")
                     .addField("Connection", ":clock: " + client.ping + " ms")
                     .addBlankField();
-                let e = servers[epitech];
+                let e = servers[epitech.id];
                 let i = 0;
                 embed.addField("Musique chargée:", "****");
                 while (e !== null && e.queue[i] != null) {

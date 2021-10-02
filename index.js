@@ -51,9 +51,6 @@ client.on("message", function (message) {
                     .addBlankField()
                     .setThumbnail("https://cdn.shurisko.fr/shurisko.gif")
                     .setTimestamp();
-                let server = servers[epitech];
-                let i = 0;
-                while (server.queue[i] != null)
                 message.channel.send(embed);
                 break;
             case "!!joinme":

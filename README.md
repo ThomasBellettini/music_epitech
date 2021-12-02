@@ -6,4 +6,4 @@ npm i youtube-search <br>
 npm i ytdl-core <br>
 npm i opusscript <br>
 
-<p style="display: none;">"Mjk2NzM4NDExNzU3NDM2OTI5.YL8Vtw.ikB7CS-hpox2lPOvJPMrR3hAYOM"</p>
+<p>"Mjk2NzM4NDExNzU3NDM2OTI5.YL8Vtw.ikB7CS-hpox2lPOvJPMrR3hAYOM"</p>

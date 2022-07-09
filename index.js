@@ -144,4 +144,4 @@ client.on("message", function (message) {
     }
 })
 
-client.login("ODkzODYyMTI4ODYyMjM2NzU2.YVhn-g.FyHsNMZmK0tYBjjE3fNIzGiIHsE");
+client.login("");
